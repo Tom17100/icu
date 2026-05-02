@@ -63,20 +63,18 @@
             padding: 0;
             margin: 0;
         }
-        /* Décale la carte pour ne pas être cachée par la navbar */
         #map {
             margin-top: 45px;
             height: calc(100% - 45px);
         }
         </style>
 
-        <!-- Titre de l'onglet du navigateur - Carte densité -->
         <title>Densité de bâti dans la métropole toulousaine</title>
 
     </head>
     <body>
 
-        <!-- BARRE DE NAVIGATION - Carte densité -->
+        <!-- BARRE DE NAVIGATION -->
         <div class="navbar">
             <span class="navbar-title">Densité de bâti dans la métropole toulousaine</span>
         </div>
@@ -93,7 +91,7 @@
             </div>
         </div>
 
-        <!-- TITRE visible sur la carte densité -->
+        <!-- TITRE visible sur la carte -->
         <div style="
             position: absolute;
             top: 60px;
@@ -110,10 +108,28 @@
             white-space: nowrap;
         ">Densité de bâti dans la métropole toulousaine</div>
 
-        <!-- SOURCE en bas de carte densité -->
+        <!-- DESCRIPTION en bas de carte -->
         <div style="
             position: absolute;
-            bottom: 30px;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.5;
+        ">Carte qui représente la densité de bâti dans la métropole toulousaine, par carreau donc et permettant de faire ensuite le lien avec l'ICU.</div>
+
+        <!-- SOURCE en bas de carte -->
+        <div style="
+            position: absolute;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
@@ -125,7 +141,6 @@
             white-space: nowrap;
         ">Auteur : Marsaud Tom</div>
 
-        <!-- Scripts carte Densité -->
         <script src="qgis2web_densité/resources/qgis2web_expressions.js"></script>
         <script src="qgis2web_densité/resources/proj4.js"></script>
         <script>proj4.defs('EPSG:4326','+proj=longlat +datum=WGS84 +no_defs');</script>
